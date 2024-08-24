@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N S E Trading Mentor Website</title>
+    <!-- Embedded CSS -->
+    <style>
+        /* body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+            background-image: url('images/texture-1898539_1280.jpg'); /* Replace with your image path */
+            /* background-size: cover;
+            background-attachment: fixed;
+        }  */
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #dfebd3, #baddf3); 
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+        nav {
+          background: linear-gradient(135deg, #dfebd3, #baddf3); 
+    padding: 1rem;
+    color: #2980b9;
+    text-align: center;
+    position: sticky; /* Makes the navbar stick at the top when scrolling */
+    top: 0;
+    z-index: 1000; /* Ensures the navbar stays on top */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+nav h1 {
+    margin: 0;
+    font-size: 3rem;
+    cursor: pointer; /* Changes cursor to a pointer on hover */
+    transition: transform 0.2s ease, color 0.3s ease; /* Adds smooth animation on hover */
+}
+
+nav h1:hover {
+    color: #f1c40f; /* Changes the text color on hover */
+    transform: scale(1.1); /* Slightly enlarges the text on hover */
+}
+
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section {
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            color: #2980b9;
+        }
+
+        p {
+            color: #555;
+            font-size: 2rem;
+        }
+
+        .courses {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .course {
+            position: relative;
+            border: 1px solid #ddd;
+            padding: 1rem;
+            width: 320px;
+            border-radius: 8px;
+            background-color: #f4f4f4;
+            overflow: hidden;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .course:hover {
+            transform: translateY(-5px);
+        }
+
+        .course img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        .course h3 {
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        .course p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .course button {
+            background-color: #2980b9;
+            color: white;
+            padding: 0.75rem 1.25rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .course button:hover {
+            background-color: #1f6391;
+        }
+
+        /* Dropdown description styling */
+        .course .description {
+            display: none; /* Hidden by default */
+            position: absolute;
+            bottom: 130px;
+            left: 0;
+            right: 0;
+            
+            background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+            color: #fff;
+            padding: 1rem;
+            font-size: 1.2rem;
+            overflow-y: auto;
+            height: 100%; /* Full height for the blur effect */
+        }
+
+        .course:hover .description {
+            display: block; /* Show on hover */
+        }
+
+        .course:hover img {
+            filter: blur(5px); /* Blur the background image on hover */
+        }
+
+       /* Contact Section Styling */
+#contact {
+    background-color: #ffffff; /* White background for the contact section */
+    padding: 2rem 0; /* Padding for spacing */
+    text-align: center; /* Center-align text */
+    width: 70%; /* Set the width to 70% */
+    margin: 0 auto; /* Center the section horizontally */
+    position: relative; /* For absolute positioning of the gradient */
+}
+
+/* Gradient Effect for Fading Edges */
+#contact::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 30%, rgba(255, 255, 255, 1) 70%, rgba(255, 255, 255, 0) 100%);
+    pointer-events: none; /* Make sure the gradient doesn't interfere with interactions */
+    z-index: -1; /* Place the gradient behind the content */
+}
+
+/* Contact Icons Container */
+.contact-icons {
+    display: flex;
+    justify-content: center; /* Center the icons horizontally */
+    gap: 2rem; /* Space between each icon */
+    margin-bottom: 2rem; /* Space below the icons */
+}
+
+/* Contact Icons Styling */
+.contact-icon {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* Space between icon and text */
+    color: #2980b9; /* Primary color for icons */
+    text-decoration: none; /* Remove underline */
+    font-size: 1rem; /* Font size for text */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.contact-icon:hover {
+    color: #1f6391; /* Darker shade on hover */
+}
+
+/* Icon Styling */
+.icon {
+    width: 24px; /* Adjusted icon size for clarity */
+    height: 24px;
+    transition: transform 0.3s ease; /* Smooth scaling effect */
+}
+
+.contact-icon:hover .icon {
+    transform: scale(1.1); /* Enlarge icon slightly on hover */
+}
+
+/* Contact Form Styling */
+.contact-form {
+    text-align: center; /* Center align the form */
+}
+
+.contact-form form {
+    display: inline-block; /* Ensures form is centered and does not stretch full width */
+}
+
+.contact-form button {
+    background-color: #2980b9; /* Primary button color */
+    color: white; /* Button text color */
+    padding: 0.75rem 1.25rem; /* Padding for button */
+    border: none; /* Remove border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 1rem; /* Button font size */
+    transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
+.contact-form button:hover {
+    background-color: #1f6391; /* Darker button color on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-icons {
+        flex-direction: column; /* Stack icons vertically on smaller screens */
+        gap: 1rem; /* Reduce gap between icons */
+    }
+    .contact-form {
+        margin-top: 1.5rem; /* Adjust spacing on smaller screens */
+    }
+}
+
+
+        
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="container">
+            <h1>N S E Trading Mentor</h1>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home">
+        <div class="container">
+            <h2>Welcome to N S E Trading Mentor</h2>
+            <p>Learn about the stock market and become a proficient investor. We offer courses and resources to help you understand the complexities of stock trading.</p>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses">
+        <div class="container">
+            <h2>Our Courses</h2>
+            <div class="courses">
+                <div class="course">
+                    <img src="images/f00cd4c9-aab9-4110-a47c-7a852cc792e4.jpg" alt="Basic Stock Market Course">
+                    <h3>Basic Stock Market Course
+                      <strong>DURATION: 30 HOURS</strong>
+                    </h3>
+                    <div class="description">
+                       <br>
+                        ✓ CANDLES PATTERN<br>
+                        ✓ DIFFERENT TIME FRAMES<br>
+                        ✓ VOLUME ANALYSIS<br>
+                        ✓ STOCKS SELECTION<br>
+                        ✓ FUNDAMENTAL ANALYSIS<br>
+                        ✓ BREAK OUT TRADES<br>
+                        ✓ GAP UP AND GAP DOWN<br>
+                        ✓ TRADING TECHNIQUES<br>
+                        • ಕ್ಯಾಂಡಲ್ಸ್ ಪ್ಯಾಟರ್ನ್<br>
+                        • ಡಿಫ್ರೆಂಟ್ ಟೈಮ್ ಪ್ರೇಮ್ಗಳು<br>
+                        • ವಾಲ್ಯೂಮ್ ಅನಲಿಸಿಸ್‌<br>
+                        • ಸ್ನಾಕ್ಸ್ ಸೆಲೆಕ್ಷನ್<br>
+                        • ಫಂಡಮೆಂಟಲ್‌ ಅನಾಲಿಸಿಸ್‌<br>
+                        • ಬ್ರೇಕ್ ಔಟ್ ಟ್ರೇಡ್ಸ್<br>
+                        • ಗ್ಯಾಪ್ ಅಪ್ ಮತ್ತು ಗ್ಯಾಪ್ ಡೌನ್<br>
+                        • ಟ್ರೇಡಿಂಗ್ ಟೆಕ್ನಿಕ್ಗಳು
+                    </div>
+                    <button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSf-AQMS0pWnusocCAEp_u1DSFEUhTT6ntlKZLSXfEdhFg2KoQ/viewform?usp=sf_link')">Register Now</button>
+                </div>
+                <div class="course">
+                    <img src="images/ce82ec94-58f4-4c27-8654-64173db9ed78.jpg" alt="Advanced Trading Strategies">
+                    <h3>Advanced Trading Strategies<br>
+                      <strong>DURATION: 120 HOURS</strong>
+                    </h3>
+                    <div class="description">
+                        <br>
+                        ✓ INCLUDING BASIC<br>
+                        ✓ LIVE TRADING<br>
+                        ✓ DERIVATIVES GREEK VALUES<br>
+                        ✓ IMPORTANCE OF PCR<br>
+                        ✓ CHAT SETUP OF TRADING<br>
+                        ✔ RISK REWARD RATIO<br>
+                        ✓ SCANNER CREATION IN CHARTINK<br>
+                        ✓ READYMADE SCANNERS FOR STOCK SELECTION ON CHARTINK WEBSITE<br>
+                        ಅಡ್ವಾನ್ಸ್ ಕೋರ್ಸ್:<br>
+                        • ಬೇಸಿಕ್ ಒಳಗೊಂಡಂತೆ<br>
+                        • ಲೈವ್ ಟ್ರೇಡಿಂಗ್<br>
+                        • ಡಿರೈವೆಟೀವ್<br>
+                        • ಗ್ರೀಕ್ ವ್ಯಾಲ್ಯೂಗಳು<br>
+                        • ಪಿಸಿಆರ್‌ನ ಮಹತ್ವ<br>
+                        • ಟ್ರೇಡಿಂಗ್ ನ ಚಾಟ್ ಸೆಟಪ್<br>
+                        • ರಿಸ್ಕ್ ರಿವಾರ್ಡ್ ರೇಶಿಯೋ<br>
+                        • ಸ್ಕ್ಯಾನ‌ರ್ ಕ್ರಿಯೇಶನ್ ಚಾರ್ಟ ಇಂಕ್<br>
+                        • ವೆಬ್ಬೆಟ್‌ನಲ್ಲಿ ಸ್ಟಾಕ್ ಸೆಲೆಕ್ಷನ್ ಗಾಗಿ ರೆಡಿಮೇಡ್ ಸ್ಕ್ಯಾನರ್ಗಳು
+                    </div>
+                    <button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSf-AQMS0pWnusocCAEp_u1DSFEUhTT6ntlKZLSXfEdhFg2KoQ/viewform?usp=sf_link')">Register Now</button>
+
+                </div>
+                <div class="course">
+                    <img src="images/18ab921d-875f-4129-bf9b-bb4cde486253.jpg" alt="Technical Analysis Mastery">
+                    <h3>Pro Trader Course
+                      <strong>DURATION: 120 HOURS</strong><br>
+                    </h3>
+                    <div class="description">
+                       
+                        INCLUDING BASIC AND ADVANCED COURSES<br>
+                        ✔ BACK TESTED OPTION STRATEGIES<br>
+                        ✔ ANALYSIS OF WEEKLY TRADING<br>
+                        ✔ LIVE TRADING TRAINING<br>
+                        ✔ NIFTY AND BANK NIFTY EXPIRY DAY TRADING SETUP<br>
+                        ✔ MONEY MANAGEMENT & AFFIRMATION<br>
+                        ✔ SEPARATE LIVE SECTIONS FOR CLEARING DOUBTS<br>
+                        ✔ FREE SEMI ALGO SOFTWARE FOR LIFETIME<br>
+                        ✔ MONTHLY INCOME GENERATION TRADING<br>
+                        ಪ್ರೊ ಟ್ರೇಡರ್ ಕೋರ್ಸ್<br>
+                        • ಬೇಸಿಕ್ ಮತ್ತು ಅಡ್ವಾನ್ಸ್ ಕೋರ್ಸ್ ಗಳನ್ನು ಒಳಗೊಂಡಂತೆ<br>
+                        • ಪ್ರಾಯೋಗಿಕ ಅಪ್ಸನ್ ಸ್ಯಾರ್ಟಜಿ್ರಗಳು<br>
+                        • ವಾರದ ಟ್ರೇಡಿಂಗ್ ನ ವಿಶ್ಲೇಷಣೆ<br>
+                        • ಲೈವ್ ಟ್ರೇಡಿಂಗ್ ತರಬೇತಿ<br>
+                        • ನಿಫ್ಟಿ ಹಾಗೂ ಬ್ಯಾಂಕ್ ನಿಷ್ಕ್ರಿಯ<br>
+                        • ಎಕ್ಸರಿ ದಿನದ ಟ್ರೇಡಿಂಗ್ ಸೆಟಪ್<br>
+                        • ಮನಿ ಮ್ಯಾನೇಜ್‌ಮೆಂಟ್<br>
+                        • ಮನಿ ಅಫರ್ಮೇಷನ್<br>
+                        • ಅನುಮಾನಗಳ ನಿವಾರಣೆಗೆ ಪ್ರತ್ಯೇಕ ಲೈವ್ ಸೆಕ್ಷನ್ಗಳು<br>
+                        • ಉಚಿತ ಸೆಮಿ ಅಲ್ಲೊ ಸಾಪ್ಟರ್ ಜೀವನಪರ್ಯಂತ<br>
+                        • ಮಾಸಿಕ ಆದಾಯ ಗಳಿಸುವಿಕೆ
+                    </div>
+                    <button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSf-AQMS0pWnusocCAEp_u1DSFEUhTT6ntlKZLSXfEdhFg2KoQ/viewform?usp=sf_link')">Register Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <!-- Contact Section -->
+<!-- Contact Section -->
+<!-- Contact Section -->
+<!-- Contact Section -->
+<section id="contact">
+  <div class="container">
+      <h2>Contact Me</h2>
+      <p>Please fill out the form to join our network. You can also contact us through our number.</p>
+      <div class="contact">
+          <!-- Contact Icons Container -->
+          <div class="contact-icons">
+              <!-- WhatsApp Link -->
+              <a href="https://wa.me/message/S5YDSCIQFTRKJ1" target="_blank" class="contact-icon">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="icon"> WhatsApp
+              </a>
+
+              <!-- Telegram Link -->
+              <a href="http://t.me/nsetradingmentor" target="_blank" class="contact-icon">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram" class="icon"> Telegram
+              </a>
+
+              <!-- Call Link -->
+              <a href="" class="contact-icon">
+                Call: 9986501000
+              </a>
+              <a href="" class="contact-icon">Gmail: Nsetreadingmentor@gmail.com</a>
+          </div>
+
+          <!-- Google Forms Button -->
+          <div class="contact-form">
+              <form action="https://docs.google.com/forms/d/e/1FAIpQLSf-AQMS0pWnusocCAEp_u1DSFEUhTT6ntlKZLSXfEdhFg2KoQ/viewform?usp=sf_link" method="get" target="_blank">
+                  <button type="submit">Register Now</button>
+              </form>
+          </div>
+      </div>
+  </div>
+</section>
+
+</body>
+</html>
